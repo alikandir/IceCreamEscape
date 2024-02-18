@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://dov6woqrkofcm"]
+
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_np1el"]
+[ext_resource type="Texture2D" uid="uid://bncqud18nx6u7" path="res://assets/art/floor_tiles.png" id="2_8171a"]
+[ext_resource type="Texture2D" uid="uid://boekvws6rcjyt" path="res://assets/art/bg.png" id="2_g7lcs"]
+[ext_resource type="PackedScene" uid="uid://cdnbwt4bugb6d" path="res://scenes/player.tscn" id="3_wjbjv"]
+[ext_resource type="PackedScene" uid="uid://c865jm8sc8j0f" path="res://scenes/refrigrator.tscn" id="4_t3nuj"]
+[ext_resource type="PackedScene" uid="uid://cpkyu0h1uh4wd" path="res://scenes/ice_bucket.tscn" id="5_o8hjl"]
+[ext_resource type="Theme" uid="uid://b6cjj3ftrdbih" path="res://assets/themes/main_theme.tres" id="6_ipmki"]
+[ext_resource type="FontFile" uid="uid://b2emyguhjqmsq" path="res://assets/themes/GloriaHallelujah-Regular_font.ttf" id="7_fdgqb"]
+[ext_resource type="PackedScene" uid="uid://dfh25wef56nqh" path="res://scenes/cherry.tscn" id="8_ewsra"]
+[ext_resource type="PackedScene" uid="uid://bg2l37n63lxjn" path="res://scenes/sun.tscn" id="9_48skq"]
+[ext_resource type="PackedScene" uid="uid://bf06t2i8n6lsu" path="res://scenes/goop.tscn" id="10_uqmyl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1s7c"]
+texture = ExtResource("2_8171a")
+texture_region_size = Vector2i(90, 90)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_b1aax"]
+tile_size = Vector2i(90, 90)
+custom_data_layer_0/name = "grid"
+custom_data_layer_0/type = 1
+sources/1 = SubResource("TileSetAtlasSource_j1s7c")
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_np1el")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_g7lcs")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_b1aax")
+format = 2
+layer_0/tile_data = PackedInt32Array(720899, 1, 0, 720912, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720913, 1, 0, 655377, 1, 0, 655363, 1, 0, 589827, 1, 0, 524291, 1, 0, 458755, 1, 0, 393219, 1, 0, 327683, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 327697, 1, 0, 393233, 1, 0, 458769, 1, 0, 524305, 1, 0, 589841, 1, 0, 327684, 65537, 0, 393220, 65537, 0, 458756, 65537, 0, 524292, 65537, 0, 589828, 65537, 0, 655364, 65537, 0, 655365, 65537, 0, 655366, 65537, 0, 655367, 65537, 0, 655368, 65537, 0, 655369, 65537, 0, 655370, 65537, 0, 655371, 65537, 0, 655372, 65537, 0, 655373, 65537, 0, 655374, 1, 0, 655375, 65537, 0, 655376, 65537, 0, 589840, 65537, 0, 589839, 65537, 0, 589838, 65537, 0, 589837, 65537, 0, 589836, 65537, 0, 589835, 65537, 0, 589834, 1, 0, 589833, 65537, 0, 589832, 65537, 0, 589831, 65537, 0, 589830, 65537, 0, 524293, 65537, 0, 589829, 65537, 0, 524294, 65537, 0, 524295, 65537, 0, 524296, 65537, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 65537, 0, 524301, 65537, 0, 524302, 65537, 0, 524303, 65537, 0, 524304, 65537, 0, 458768, 1, 0, 458767, 1, 0, 458766, 65537, 0, 458765, 65537, 0, 458764, 65537, 0, 458763, 65537, 0, 458762, 1, 0, 458761, 65537, 0, 458760, 65537, 0, 458759, 65537, 0, 458758, 65537, 0, 458757, 65537, 0, 393221, 65537, 0, 393222, 65537, 0, 393223, 65537, 0, 393224, 65537, 0, 393225, 65537, 0, 393226, 65537, 0, 393227, 65537, 0, 393228, 65537, 0, 393229, 65537, 0, 393230, 65537, 0, 393231, 65537, 0, 393232, 65537, 0, 327696, 65537, 0, 327695, 65537, 0, 327694, 65537, 0, 327693, 65537, 0, 327692, 65537, 0, 327691, 65537, 0, 327690, 65537, 0, 327689, 65537, 0, 327688, 65537, 0, 327687, 65537, 0, 327686, 65537, 0, 327685, 65537, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_wjbjv")]
+z_index = 10
+z_as_relative = false
+position = Vector2(675, 585)
+
+[node name="Refrigrator" parent="." instance=ExtResource("4_t3nuj")]
+position = Vector2(1440, 901)
+scale = Vector2(2, 2)
+
+[node name="IceBucket" parent="." instance=ExtResource("5_o8hjl")]
+position = Vector2(853, 659)
+
+[node name="IceBucket4" parent="." instance=ExtResource("5_o8hjl")]
+position = Vector2(488, 750)
+
+[node name="IceBucket2" parent="." instance=ExtResource("5_o8hjl")]
+position = Vector2(1040, 933)
+
+[node name="IceBucket3" parent="." instance=ExtResource("5_o8hjl")]
+position = Vector2(1122, 478)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MovesLeftText" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 290.0
+offset_top = -190.0
+offset_right = 690.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_ipmki")
+theme_override_fonts/normal_font = ExtResource("7_fdgqb")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+
+[node name="Cherry" parent="." instance=ExtResource("8_ewsra")]
+position = Vector2(674, 943)
+
+[node name="Sun" parent="." instance=ExtResource("9_48skq")]
+position = Vector2(960, 180)
+
+[node name="Goop" parent="." instance=ExtResource("10_uqmyl")]
+position = Vector2(675, 854)
+
+[node name="Goop2" parent="." instance=ExtResource("10_uqmyl")]
+position = Vector2(764, 853)
+
+[node name="Goop3" parent="." instance=ExtResource("10_uqmyl")]
+position = Vector2(765, 942)
+
+[node name="Goop4" parent="." instance=ExtResource("10_uqmyl")]
+position = Vector2(587, 943)
+
+[node name="Goop5" parent="." instance=ExtResource("10_uqmyl")]
+position = Vector2(585, 856)
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="cherry_collected" from="Player" to="." method="_on_player_cherry_collected"]
+[connection signal="level_cleared" from="Player" to="." method="_on_player_level_cleared"]

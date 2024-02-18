@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv0q4vs8wypm1"]
+
+[ext_resource type="AudioStream" uid="uid://85p0j6y6mprk" path="res://assets/audio/bgm.wav" id="1_pk8xg"]
+[ext_resource type="Script" path="res://autoloads/audio_manager.gd" id="2_50cfv"]
+[ext_resource type="AudioStream" uid="uid://bk6v0mmhmyru2" path="res://assets/audio/chuckle.wav" id="3_6e7in"]
+
+[node name="BGM" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_pk8xg")
+autoplay = true
+script = ExtResource("2_50cfv")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6e7in")

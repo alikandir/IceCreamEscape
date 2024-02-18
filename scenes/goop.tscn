@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf06t2i8n6lsu"]
+
+[ext_resource type="Script" path="res://scripts/goop.gd" id="1_pj272"]
+[ext_resource type="Texture2D" uid="uid://c6fvrv72icy8o" path="res://assets/art/slime.png" id="2_s6rew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyl4e"]
+size = Vector2(32, 30)
+
+[node name="Goop" type="Area2D" groups=["goop"]]
+z_index = 2
+script = ExtResource("1_pj272")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tyl4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s6rew")

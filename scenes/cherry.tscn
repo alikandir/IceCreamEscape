@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfh25wef56nqh"]
+
+[ext_resource type="Script" path="res://scripts/cherry.gd" id="1_l5gg2"]
+[ext_resource type="Texture2D" uid="uid://dfoqcro1qgf5j" path="res://assets/art/cherry.png" id="1_qae6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10ii3"]
+size = Vector2(52, 66)
+
+[sub_resource type="Animation" id="Animation_s5u82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_noq11"]
+resource_name = "cherry"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8oh5m"]
+_data = {
+"RESET": SubResource("Animation_s5u82"),
+"cherry": SubResource("Animation_noq11")
+}
+
+[node name="Cherry" type="Area2D" groups=["cherry"]]
+z_index = 2
+script = ExtResource("1_l5gg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_10ii3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("1_qae6u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8oh5m")
+}
